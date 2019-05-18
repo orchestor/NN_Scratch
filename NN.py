@@ -2,7 +2,6 @@ import numpy as np
 
 
 class Sigmod:
-
     def __init__(self):
         self.params = []
 
@@ -11,7 +10,6 @@ class Sigmod:
 
 
 class FullyConnectLayer:
-
     def __init__(self, weight, bias):
         self.params = [weight, bias]
 
