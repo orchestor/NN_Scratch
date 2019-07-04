@@ -31,3 +31,15 @@ class Relu:
         dout(self.mask) = 0
         backward_val = dout
         return backward_val
+
+class Sigmoid:
+    def __init_(self):
+        self.y = None
+
+    def forward(self, x):
+        y = 1/(1+np.exp(-x))
+        self.y = y
+        return y
+    def backward(self,dy):
+        dx = dy*(1-self.out)*self.out
+        return dx
