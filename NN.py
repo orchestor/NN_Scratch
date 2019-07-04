@@ -16,3 +16,18 @@ class FullyConnectLayer:
     def forward(self, x):
         weight, bias = self.params
         return np.dot(x, weight) + bias
+
+class Relu:
+    def __init_(self):
+        self.mask = None
+
+    def forward(self, x):
+        self.mask = (x<=0)
+        forward_val = x.copy()
+        forward_val(self.mask) = 0 # if x is <= zero, then it will be zero. 
+        return forward_val
+
+    def backward(self, dout):
+        dout(self.mask) = 0
+        backward_val = dout
+        return backward_val
