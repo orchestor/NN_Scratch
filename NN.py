@@ -35,3 +35,12 @@ class Sigmoid:
     def backward(self,dy):
         dx = dy*(1-self.out)*self.out
         return dx
+
+
+class SoftmaxWithLoss:
+    def softmax(x):
+        c = np.max(x)
+        norm_x = np.exp(x - c)
+        y = norm_x / np.sum(norm_x)
+
+        return y
